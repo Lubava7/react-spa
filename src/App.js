@@ -1,25 +1,64 @@
-import logo from './logo.svg';
-import './App.css';
+class App extends React.Component {
+  state = {
+      closed: true
+  };
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+  openForm() {
+      this.setState({
+          closed: false
+      });
+  }
 
-export default App;
+  closeForm() {
+      this.setState({
+          closed: true
+      });
+  }
+
+  render() {
+      return (
+          <div className='app'>
+              <Header brand='Иван Иванов'></Header>
+
+              <main className='main'>
+                  <About title='React-разработчик Иван Иванов'>
+                      <p>
+                          Разрабатываю на самом крутом в мире фреймворке
+                          <br />
+                          самые крутые в мире SPA!
+                      </p>
+                      <p>С удовольствием и вам что-нибудь разработаю </p>
+                  </About>
+
+                  <div className='portfolio'>
+                      <div className='container'>
+                          {works.map(work => (
+                              <PortfolioItem key={work.id} work={work} />
+                          ))}
+                      </div>
+                  </div>
+
+                  <div className='contacts'>
+                      <div className='container'>
+                          {this.state.closed ? (
+                              <button
+                                  className='button'
+                                  onClick={() => this.openForm()}
+                              >
+                                  Напишите мне
+                              </button>
+                          ) : (
+                              <div>
+                                  <hr />
+                                  <ContactForm
+                                      onSubmit={() => this.closeForm()}
+                                  />
+                              </div>
+                          )}
+                      </div>
+                  </div>
+              </main>
+          </div>
+      );
+  };
+};

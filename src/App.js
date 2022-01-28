@@ -40,9 +40,9 @@ class App extends React.Component {
                       </p>
                       <p>С удовольствием и вам что-нибудь разработаю </p>
                   </About>
-                      <Buttons text = 'Hello'/>
-                      <Buttons text = 'Hi!!!!!!!1'/>
-                      <Buttons text = 'I am sad button'/>
+                      <Buttons text = 'Hello' title = "button 1"/>
+                      <Buttons text = 'Hi!!!!!!!1' title = "button 2"/>
+                      <Buttons text = 'I am happy button' title = "click to order a tasty honey-cake"/>
                   <div className='portfolio'>
                       <div className='container'>
                           {works.map(work => (

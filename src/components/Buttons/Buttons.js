@@ -45,26 +45,22 @@ import './Buttons.css'
 
 
 class Buttons extends React.Component{
-    constructor(props) {
-      this.state = {
-         count:0
-      }
-
-      this.increment = this.increment.bind(this);
-    }
-    increment() {
-        this.setState(state=>({
-            count : state.count +1
-        }))
-    }
-
-    
+   constructor(props){
+       super(props);
+       this.state = {count:0};
+   }
+   plusone(){
+       this.setState(state => ({
+           count: state.count +1
+       })
+        )
+   }
     render(){
-        const count = this.state.count
+        
         return(
             <div>
             <h1>{this.props.title}</h1> 
-            <button onClick={this.increment}>{this.props.text}</button>
+            <button onClick={this.plusone}>{this.props.text}</button>
             <h1>Oh! u click me {this.state.count} times, very cool!</h1>
             </div>
         )

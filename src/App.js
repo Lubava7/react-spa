@@ -1,3 +1,14 @@
+import React from 'react';
+import './App.css';
+import Header from './components/Header/Header';
+import About from './components/about/About';
+import PortfolioItem from './components/PortfolioItem/PortfolioItem';
+import ContactForm from './components/ContactForm/ContactForm';
+import Buttons from './components/Buttons/Buttons';
+
+
+import works from './works';
+
 class App extends React.Component {
   state = {
       closed: true
@@ -29,7 +40,7 @@ class App extends React.Component {
                       </p>
                       <p>С удовольствием и вам что-нибудь разработаю </p>
                   </About>
-
+                      <Buttons/>
                   <div className='portfolio'>
                       <div className='container'>
                           {works.map(work => (
@@ -62,3 +73,4 @@ class App extends React.Component {
       );
   };
 };
+export default App;

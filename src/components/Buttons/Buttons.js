@@ -2,11 +2,11 @@ import React from 'react';
 import './Buttons.css'
 
 
-const Buttons = () => {
-    
+const Buttons = (props) => {
     return(
-        <button></button>
-        
+        <button>{props.text}</button>
     )
   };
+ 
   export default Buttons;
+  

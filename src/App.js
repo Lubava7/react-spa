@@ -41,6 +41,8 @@ class App extends React.Component {
                       <p>С удовольствием и вам что-нибудь разработаю </p>
                   </About>
                       <Buttons/>
+                      <Buttons/>
+                      <Buttons/>
                   <div className='portfolio'>
                       <div className='container'>
                           {works.map(work => (

@@ -49,9 +49,9 @@ class Buttons extends React.Component{
        super(props);
        this.state = {count:0};
    }
-   plusone(){
+   plusone=()=>{
        this.setState(state => ({
-           count: state.count +1
+           count: this.state.count +1
        })
         )
    }

@@ -25,13 +25,30 @@ class Inputs extends React.Component{
       
         this.state = {
             result: 0,
+            numOne:0,
+            numTwo:0
+           
         }
-        this.reset = this.reset.bind(this);
+        this.add = this.add.bind(this);
+        this.num = this.num.bind(this);
+        this.numnum = this.numnum.bind(this);
     }
 
-        reset(){
+        add(){
             this.setState({
                 result: this.state.numOne + this.state.numTwo
+               
+            })
+        }
+        num(){
+            this.setState({
+                numOne: this.e.target.value
+               
+            })
+        }
+        numnum(){
+            this.setState({
+                numTwo: this.e.target.value
             })
         }
 
@@ -39,9 +56,9 @@ class Inputs extends React.Component{
           return(
               <div>
                   <h1>Sum of two numbers is {this.state.result}</h1>
-                  <input type='Number'>{this.state.numOne}</input>
-                  <input type='Number'>{this.state.numTwo}</input>
-                  <button onClick={this.reset}>click to reset</button>
+                  <input placeholder='enter a number' onChange={this.num} defaultValue={this.state.numOne}></input>
+                  <input placeholder='enter a number' onChange={this.numnum} defaultValue={this.state.numTwo}></input>
+                  <button onClick={this.add}>click to add numbers</button>
               </div>
           )
       }

@@ -24,15 +24,23 @@ class Inputs extends React.Component{
         super(props)
       
         this.state = {
-            result: 
+            result: 0,
         }
-      }
+        this.reset = this.reset.bind(this);
+    }
+
+        reset(){
+            this.setState({
+                result: this.state.numOne + this.state.numTwo
+            })
+        }
+
       render(){
           return(
               <div>
-                  <h1>Sum of two numbers is{this.state.result}</h1>
-                  <input>{this.state.numOne}</input>
-                  <input>{this.state.numTwo}</input>
+                  <h1>Sum of two numbers is {this.state.result}</h1>
+                  <input type='Number'>{this.state.numOne}</input>
+                  <input type='Number'>{this.state.numTwo}</input>
                   <button onClick={this.reset}>click to reset</button>
               </div>
           )

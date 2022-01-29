@@ -25,7 +25,8 @@ class Inputs extends React.Component{
       
         this.state = {
             result: 0,
-            value: 0
+            numOne: 0,
+            numTwo:0
            
         }
         this.add = this.add.bind(this);

@@ -1,6 +1,7 @@
 import React from 'react'
 import './Inputs.css'
 
+
 // ВАРИАНТ 1
 // сделай короче компонент - в нем два инпута и кнопка
 // когда ты вводишь значение в каждый инпут
@@ -26,7 +27,8 @@ class Inputs extends React.Component{
         this.state = {
             result: 0,
             numOne: 0,
-            numTwo:0
+            numTwo:0,
+            container: true
            
         }
         this.add = this.add.bind(this);
@@ -37,8 +39,8 @@ class Inputs extends React.Component{
 
         add(){
             this.setState({
-                result: +this.state.numOne + +this.state.numTwo
-               
+                result: +this.state.numOne + +this.state.numTwo,
+               container: false
             })
         }
         num(event){
@@ -56,20 +58,26 @@ class Inputs extends React.Component{
             this.setState({
                 result: 0,
                 numOne: 0,
-                numTwo:0
+                numTwo:0,
+                
         })
     }
 
       render(){
+          
           return(
               <div>
-                  <h1>Sum of two numbers is {this.state.result}</h1>
-                  <button onClick={this.reset}>click to reset </button>
-
+                  
+                  <div className='container'>
+                   <h1>Sum of two numbers is {this.state.result}</h1>
+                   <button onClick={this.reset}>click to reset </button> 
+                  </div>
+      
                   <input placeholder='enter a number' onChange={this.num} value={this.state.numOne}></input>
                   <input placeholder='enter a number' onChange={this.numnum} value={this.state.numTwo}></input>
                   <button onClick={this.add}>click to add numbers</button>
               </div>
+      
           )
       }
 }

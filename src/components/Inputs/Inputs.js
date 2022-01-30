@@ -64,26 +64,22 @@ class Inputs extends React.Component{
     }
 
       render(){
-        
-         return(
-              
-            <div>
-               
+        return (
+           <div>  
+               {this.state.result ? (
                 <div className='container'>
-                   <h1>Sum of two numbers is {this.state.result}</h1>
-                   <button onClick={this.reset}>click to reset </button> 
+                    <h1>Sum of two numbers is {this.state.result}</h1>
+                    <button onClick={this.reset}>click to reset </button>
                 </div>
+               ) : (
                 <div>
                   <input placeholder='enter a number' onChange={this.num} value={this.state.numOne}/>
                   <input placeholder='enter a number' onChange={this.numnum} value={this.state.numTwo}/>
                   <button onClick={this.add}>click to add numbers</button> 
-                </div>    
-       
-              </div>
-      
-         )
-          
-}}
+                </div>
+               )}
+            </div>
+        )}}
 
 
 export default Inputs;

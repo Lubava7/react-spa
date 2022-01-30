@@ -32,6 +32,7 @@ class Inputs extends React.Component{
         this.add = this.add.bind(this);
         this.num = this.num.bind(this);
         this.numnum = this.numnum.bind(this);
+        this.reset =this.reset.bind(this);
     }
 
         add(){
@@ -51,11 +52,20 @@ class Inputs extends React.Component{
                 numTwo: event.target.value
             })
         }
+        reset(){
+            this.setState({
+                result: 0,
+                numOne: 0,
+                numTwo:0
+        })
+    }
 
       render(){
           return(
               <div>
                   <h1>Sum of two numbers is {this.state.result}</h1>
+                  <button onClick={this.reset}>click to reset </button>
+
                   <input placeholder='enter a number' onChange={this.num} value={this.state.numOne}></input>
                   <input placeholder='enter a number' onChange={this.numnum} value={this.state.numTwo}></input>
                   <button onClick={this.add}>click to add numbers</button>
@@ -69,3 +79,51 @@ class Inputs extends React.Component{
 
 
 export default Inputs;
+
+
+
+
+// class Inputs extends React.Component{
+//     constructor(props) {
+//         super(props)
+      
+//         this.state = {
+//             result: 0,
+//             numOne: 0,
+//             numTwo:0
+           
+//         }
+//         this.add = this.add.bind(this);
+//         this.num = this.num.bind(this);
+//         this.numnum = this.numnum.bind(this);
+//     }
+
+//         add(){
+//             this.setState({
+//                 result: +this.state.numOne + +this.state.numTwo
+               
+//             })
+//         }
+//         num(event){
+//             this.setState({
+//                 numOne: event.target.value
+               
+//             })
+//         }
+//         numnum(event){
+//             this.setState({
+//                 numTwo: event.target.value
+//             })
+//         }
+
+//       render(){
+//           return(
+//               <div>
+//                   <h1>Sum of two numbers is {this.state.result}</h1>
+//                   <input placeholder='enter a number' onChange={this.num} value={this.state.numOne}></input>
+//                   <input placeholder='enter a number' onChange={this.numnum} value={this.state.numTwo}></input>
+//                   <button onClick={this.add}>click to add numbers</button>
+//               </div>
+//           )
+//       }
+// }

@@ -6,6 +6,7 @@ import PortfolioItem from './components/PortfolioItem/PortfolioItem';
 import ContactForm from './components/ContactForm/ContactForm';
 import Buttons from './components/Buttons/Buttons';
 import Inputs from './components/Inputs/Inputs';
+import SmileButton from './components/SmileButton/SmileButton';
 
 import works from './works';
 
@@ -40,6 +41,10 @@ class App extends React.Component {
                       </p>
                       <p>С удовольствием и вам что-нибудь разработаю </p>
                   </About>
+
+                    <SmileButton/>
+
+
                   <Inputs/>
                   
                       <Buttons text = {'Hello'} title = {"button 1"} />

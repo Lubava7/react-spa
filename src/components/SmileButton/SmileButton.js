@@ -9,32 +9,34 @@ constructor(props) {
     smileDiv: false
   }
   
-  this.ShowTheSmile = this.ShowTheSmile.bind(this)
-  this.HideTheSmile = this.HideTheSmile.bind(this)
+  this.showTheSmile = this.showTheSmile.bind(this)
+  this.hideTheSmile = this.hideTheSmile.bind(this)
+  
 }
-ShowTheSmile(){
+showTheSmile(){
     this.setState({
         smileDiv: true
 
     })
 }
-HideTheSmile(){
+hideTheSmile(){
     this.setState({
         smileDiv: false
     })
 }
+
   render(){
-      const smileDiv = this.className.smileDiv
+    const smileDiv = this.state.smileDiv
       if(smileDiv){
       return(
             <div className="smileDiv">
             <p>Smile :D</p>
-            <button onClick={this.HideTheSmile}>I dont want Smile anymore</button>
+            <button onClick={this.hideTheSmile}>I dont want Smile anymore</button>
             </div> )
   } else {
       return(
             <div>
-            <button onClick={this.ShowTheSmile}>CLick to see the Smile</button>
+            <button onClick={this.showTheSmile}>CLick to see the Smile</button>
             </div>
                 )}
       }}

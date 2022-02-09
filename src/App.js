@@ -1,70 +1,82 @@
 import React from "react";
 import "./App.css";
 import Header from "./components/Header/Header";
-import About from "./components/about/About";
-import PortfolioItem from "./components/PortfolioItem/PortfolioItem";
-import ContactForm from "./components/ContactForm/ContactForm";
-import Buttons from "./components/Buttons/Buttons";
-import Inputs from "./components/Inputs/Inputs";
-import SmileButton from "./components/SmileButton/SmileButton";
+// import About from "./components/about/About";
+// import PortfolioItem from "./components/PortfolioItem/PortfolioItem";
+// import ContactForm from "./components/ContactForm/ContactForm";
+// import Buttons from "./components/Buttons/Buttons";
+// import Inputs from "./components/Inputs/Inputs";
+// import SmileButton from "./components/SmileButton/SmileButton";
 
-import works from "./works";
+import { Routes, Route, Navigate } from "react-router-dom";
 
-class App extends React.Component {
-  constructor(props) {
-    super(props);
+import HomePage from "./pages/home";
+import ProjectPage from "./pages/project";
 
-    this.state = {
-      closed: true,
-    };
-  }
+// import works from "./works";
 
-  openForm() {
-    this.setState({
-      closed: false,
-    });
-  }
+export default class App extends React.Component {
+  //   constructor(props) {
+  //     super(props);
 
-  closeForm() {
-    this.setState({
-      closed: true,
-    });
-  }
+  //     this.state = {
+  //       closed: true,
+  //     };
+  //   }
+
+  //   openForm() {
+  //     this.setState({
+  //       closed: false,
+  //     });
+  //   }
+
+  //   closeForm() {
+  //     this.setState({
+  //       closed: true,
+  //     });
+  //   }
 
   render() {
     return (
       <div className="app">
-        <Header brand="Иван Иванов"></Header>
+        <Header brand="Любава Канивец"></Header>
 
         <main className="main">
-          <About title="React-разработчик Иван Иванов">
+          {/* <About title="React-разработчик Любава Канивец">
             <p>
               Разрабатываю на самом крутом в мире фреймворке
               <br />
               самые крутые в мире SPA!
             </p>
             <p>С удовольствием и вам что-нибудь разработаю </p>
-          </About>
+          </About> */}
 
-          <SmileButton />
+          <Routes>
+            <Route path="/project/:id" component={ProjectPage} />
+            <Route exact path="/" component={HomePage} />
+          </Routes>
+          {/* <Navigate to="/" /> */}
 
-          <Inputs />
+          {/* <SmileButton /> */}
 
-          <Buttons text={"Hello"} title={"button 1"} />
+          {/* <Inputs /> */}
+
+          {/* <Buttons text={"Hello"} title={"button 1"} />
           <Buttons text={"Hi!!!!!!!1"} title={"button 2"} />
           <Buttons
             text={"I am happy button"}
             title={"click to order a tasty honey-cake"}
-          />
-          <div className="portfolio">
+          /> */}
+
+          {/* <div className="portfolio">
             <div className="container">
               {works.map((work) => (
                 <PortfolioItem key={work.id} work={work} />
               ))}
             </div>
-          </div>
+          </div> */}
 
-          <div className="contacts">
+          {/* <div className="contacts">
             <div className="container">
               {this.state.closed ? (
                 <button className="button" onClick={() => this.openForm()}>
@@ -77,10 +89,9 @@ class App extends React.Component {
                 </div>
               )}
             </div>
-          </div>
+          </div> */}
         </main>
       </div>
     );
   }
 }
-export default App;

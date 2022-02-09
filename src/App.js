@@ -54,8 +54,9 @@ export default class App extends React.Component {
           <Routes>
             <Route path="/project/:id" component={ProjectPage} />
             <Route exact path="/" component={HomePage} />
+            <Route path="*" element={<Navigate to="/" />} />
           </Routes>
-          {/* <Navigate to="/" /> */}
+          {/* <Navigate to="/" />  */}
 
           {/* <SmileButton /> */}
 
